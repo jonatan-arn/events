@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: ##ff725e;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistes.usuarios.C.LoginViewController">
+    <children>
+        <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #ff725e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" layoutX="105.0" layoutY="262.0" prefHeight="23.0" prefWidth="173.0" text="Gestió d'events" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="18.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0" text="Jonatan Arnandis Alfonso" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/7841b87f5f045017642952f4f882053e.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+        <Pane layoutX="488.0" layoutY="106.0" AnchorPane.bottomAnchor="67.0" AnchorPane.topAnchor="106.0">
+            <children>
+                <TextField fx:id="user" layoutX="7.0" prefHeight="34.0" prefWidth="275.0" promptText="usuari" />
+                <PasswordField fx:id="password" layoutX="7.0" layoutY="61.0" prefHeight="34.0" prefWidth="275.0" promptText="constrasenya" stylesheets="@../styling/fullpackstyling.css" />
+                <Button fx:id="loginB" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="125.0" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/fullpackstyling.css" text="Iniciar Sessió" />
+                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="215.0" mnemonicParsing="false" onAction="#registrar" prefHeight="34.0" prefWidth="275.0" style="-fx-background-color: #ff725e;" text="Registrat" textFill="WHITE" />
+                <Separator layoutX="8.0" layoutY="190.0" prefHeight="7.0" prefWidth="275.0" />
+                <Label alignment="CENTER" layoutX="126.0" layoutY="179.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="O" textFill="#5b5a5a">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+                <Separator layoutY="270.0" prefHeight="7.0" prefWidth="275.0" />
+            <Button fx:id="exitB" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="299.0" mnemonicParsing="false" onAction="#exit" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #ff725e;" text="Eixir" textFill="WHITE" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

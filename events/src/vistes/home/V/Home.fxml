@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistes.home.C.HomeController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="nom" layoutX="224.0" layoutY="47.0" text="NOM" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="tipus" layoutX="227.0" layoutY="100.0" text="TIPUS" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER" layoutX="1681.0" layoutY="81.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#exit" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="EIXIR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ButtonBar fx:id="adminBar" layoutX="404.0" layoutY="90.0" prefHeight="40.0" prefWidth="553.0">
+              <buttons>
+                  <JFXButton fx:id="BCorredor" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" onAction="#addCorredor" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="Afegir Corredor" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" onAction="#addClub" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="Afegir Club" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="BCarrera" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" onAction="#addCarrera" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="Afegir Carrera" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="modClub" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" onAction="#modClub" prefHeight="30.0" prefWidth="163.0" ripplerFill="WHITE" style="-fx-background-color: #473E98;" text="Modificar club" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+              </buttons>
+            </ButtonBar>
+         </children>
+      </Pane>
+      <VBox layoutX="-1.0" layoutY="145.0" prefHeight="221.0" prefWidth="374.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="713.0" AnchorPane.topAnchor="146.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="379.0" text="ADMINISTRACIÓ CARRERES" textFill="#171717">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#loadCarrera" prefHeight="43.0" prefWidth="389.0" ripplerFill="#bfadf8" text="Carreres" textFill="#5b5858">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+
+            <JFXCheckBox fx:id="checkboxCarreresPosicio" onAction="#ordenarPerParticipants" prefHeight="18.0" prefWidth="306.0" text="Carreres ordenades per el numero de participants">
+               <VBox.margin>
+                  <Insets left="70.0" />
+               </VBox.margin>
+            </JFXCheckBox>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#loadInscripcio" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Inscripcións" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <VBox fx:id="adminVBox" layoutX="9.0" layoutY="376.0" prefHeight="218.0" prefWidth="252.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" text="ADMINISTRACIÓ" textFill="#171717">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#loadCorredor" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Corredors" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#loadClub" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Clubs" textFill="#5b5858">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="139.0" layoutX="11.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/7841b87f5f045017642952f4f882053e.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Pane>
+      <ScrollPane layoutX="442.0" layoutY="216.0" prefHeight="829.0" prefWidth="1467.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="216.0">
+         <content>
+            <VBox fx:id="pnl_scroll" prefHeight="830.0" prefWidth="1507.0" style="-fx-background-color: #fff;" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="404.0" layoutY="166.0" text="Buscar" />
+      <TextField fx:id="filterFieldCarrera" layoutX="451.0" layoutY="163.0" />
+      <TextField fx:id="filterFieldCorredor" layoutX="451.0" layoutY="163.0" />
+      <TextField fx:id="filterFieldClub" layoutX="451.0" layoutY="163.0" />
+      <TextField fx:id="filterFieldInscripcio" layoutX="451.0" layoutY="163.0" />
+      <Label fx:id="titol" layoutX="682.0" layoutY="157.0" prefHeight="35.0" prefWidth="574.0" text="titol">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      
+   </children>
+</AnchorPane>

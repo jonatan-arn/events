@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistes.inscripcio.C.InscripcioFormulariController">
+	<top>
+		<Label alignment="TOP_LEFT" text="Inscripcio" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+			
+	</top>
+	<bottom>
+		<AnchorPane prefHeight="384.0" prefWidth="586.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label layoutX="34.0" layoutY="110.0" text="Carrera:" />
+				<Label layoutX="37.0" layoutY="182.0" prefHeight="18.0" prefWidth="77.0" text="Corredor:" />
+				<Label layoutX="36.0" layoutY="143.0" prefHeight="18.0" prefWidth="32.0" text="Club:" />
+				<Label layoutX="36.0" layoutY="227.0" prefHeight="18.0" prefWidth="98.0" text="Data inscripcio" />
+				<Label layoutX="41.0" layoutY="274.0" text="Posició: " />
+				<JFXComboBox fx:id="Carrera" layoutX="202.0" layoutY="94.0" />
+				<JFXComboBox fx:id="Club" layoutX="202.0" layoutY="135.0" />
+				<JFXComboBox fx:id="Corredor" layoutX="202.0" layoutY="175.0" />
+				<JFXDatePicker fx:id="Data" layoutX="202.0" layoutY="222.0" />
+				<JFXTextField fx:id="Posicio" layoutX="202.0" layoutY="258.0" />
+				<ButtonBar layoutX="191.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0">
+					<buttons>
+						<JFXButton fx:id="CancelarB" onAction="#Cancelar" style="-fx-background-color: #473E98;" text="Cancelar" textFill="WHITE" />
+						<JFXButton fx:id="GuardarB" onAction="#Guardar" style="-fx-background-color: #473E98;" text="Guardar" textFill="WHITE" />
+					</buttons>
+				</ButtonBar>
+			</children>
+		</AnchorPane>
+	</bottom>
+</BorderPane>

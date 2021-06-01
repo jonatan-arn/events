@@ -1,0 +1,32 @@
+-revisar validacio de furmulari (DONE)
+-revisar el update (FALTA LA INSCRIPCIO) (DONE)
+-boto de inscriures al menu de carreres (DONE)
+-modificacio vista depenent del login (DONE)
+-RESTRICCIO DE QUE SOLS ES POT INSCRIURE ABANS DE LA CARRERA (DONE)
+-Filtre mostrar sols corredors inscrits EN UNA CARRERA (DONE)
+-Filtre corredors PER CLUB (DONE)	
+-Clasificació corredors segons posicio en carrera (DONE) 
+-LLista de carreres segon el nPart (DONE)
+-LLista de club en carrera segons el nombre part		
+-BARRA DE BUSQUEDA (DONE)
+-BOTO EN CLUB MOSTRAR TOTS ELS SEUS CORREDORS (DONE)
+
+-DUBTES, USUARI CORREDOR
+-DORSAL I POSICIO	
+
+-PREPARAR CASOS DE PROVA
+
+-Afegir registre tipus per defecte (DONE)
+
+-JUSTIFICAR TEXT DOCUMENTACIO (DONE)
+-TITOLS CORRECTAMENT 
+-CORREGIR FALTES
+
+
+-Inscripcions en login de corredor mostrar sols les seus (DONE)
+-TITULS DE LES VISTES (DONE)
+-PROBLEMES desenvolupament:
+	-EAGER MODELS
+	
+	Hibernate Error: a different object with the same identifier value was already associated with the session
+	-merge

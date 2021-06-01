@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistes.inscripcio.C.ItemInscripcioController">
+   <children>
+      <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+         <children>
+            <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+            <Label fx:id="dorsal" layoutX="123.0" layoutY="18.0" text="Inscripció" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="113.0" text="CORREDOR" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="186.0" text="CLUB" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="279.0" layoutY="113.0" text="CARRERA" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="279.0" layoutY="186.0" text="POSICIÓ" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="corredor" layoutX="58.0" layoutY="139.0" text="corredor" textFill="#4d4c4c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="carrera" layoutX="287.0" layoutY="139.0" text="carrera" textFill="#4d4c4c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicio" layoutX="287.0" layoutY="211.0" text="posicio" textFill="#4d4c4c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="club" layoutX="58.0" layoutY="211.0" text="club" textFill="#4d4c4c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="576.0" layoutY="113.0" text="OPERACIONS" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="614.0" layoutY="12.0" text="Data inscripció" textFill="#3a1c9d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dia" layoutX="614.0" layoutY="34.0" text="16" textFill="#aeacac">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="mes" layoutX="663.0" layoutY="42.0" text="APR" textFill="#3a1c9d" />
+            <Label fx:id="any" layoutX="663.0" layoutY="60.0" text="2018" textFill="#aeacac" />
+            <Separator layoutX="708.0" layoutY="19.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="0.0" />
+            <Button fx:id="editB" layoutX="576.0" layoutY="150.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: #aeacac;" text="Editar" textFill="#fffefe" />
+            <Button fx:id="delB" layoutX="639.0" layoutY="150.0" mnemonicParsing="false" onAction="#del" style="-fx-background-color: #aeacac;" text="Borrar" textFill="#fffefe" />
+            <Button layoutX="576.0" layoutY="198.0" mnemonicParsing="false" onAction="#addPosicio" style="-fx-background-color: #aeacac;" text="Afegir Posició" textFill="#fffefe" />
+         </children>
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
