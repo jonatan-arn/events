@@ -4,10 +4,6 @@ import java.awt.TextField;
 
 import java.time.LocalDate;
 
-
-
-
-
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 
@@ -17,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import vistes.carrera.M.Carrera_Model;
-
 
 public class CarreraFormulariController {
 	@FXML
@@ -84,9 +79,18 @@ public class CarreraFormulariController {
 			} else if (preu < 0.00) {
 				alert("error en el preu", null, "El preu no pot ser negatiu.");
 			} else {
-				Carrera_Model model = new Carrera_Model(this.Nom.getText(), this.Localitat.getText(),
-						this.Data.getValue(), this.Hora.getText(), NPart, distancia, preu);
-				boolean b = model.Add(model);
+				Carrera_Model model_R;
+				if (this.model == null) {
+					model_R = new Carrera_Model(this.Nom.getText(), this.Localitat.getText(), this.Data.getValue(),
+							this.Hora.getText(), NPart, distancia, preu);
+				} else {
+					model_R = new Carrera_Model(this.Nom.getText(), this.Localitat.getText(), this.Data.getValue(),
+							this.Hora.getText(), NPart, distancia, preu);
+					model_R.setId(this.model.getId());
+				}
+				System.out.println(preu);
+				System.out.println(model_R.getPreu());
+				boolean b = model.Add(model_R);
 				if (b) {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle(null);
@@ -115,6 +119,5 @@ public class CarreraFormulariController {
 		alert.setContentText(content);
 		alert.showAndWait();
 	}
-
 
 }

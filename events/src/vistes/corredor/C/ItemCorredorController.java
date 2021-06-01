@@ -137,22 +137,30 @@ public class ItemCorredorController {
 						inscripcio.setCorredor(corredor);
 						inscripcio.setDataInscripcio(LocalDate.now());
 						inscripcio = this.addDorsal(inscripcio);
+						inscripcio.setPosicio(0);
 						if (corredor.getClub() != null)
 							inscripcio.setNif(corredor.getClub());
 						inscripcio.Add(inscripcio);
+						System.out.println(c.getNom());
+						System.out.println(c.getNParticipants());
+						int n = c.getNParticipants()+1;
+						c.setNParticipants(n);
+						c.Add(c);
 					}
 				}
 			}
 
 		}
 	}
+
 	public Inscripcio_Model addDorsal(Inscripcio_Model inscripcio) {
 		Inscripcio_Model model = new Inscripcio_Model();
-		inscripcio.setDorsal(model.getLastDorsal()+1);
+		inscripcio.setDorsal(model.getLastDorsal() + 1);
 		return inscripcio;
 		// The Java 8 way to get the response value (with lambda expression).
 
 	}
+
 	public void alert(String title, String header, String content) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle(title);

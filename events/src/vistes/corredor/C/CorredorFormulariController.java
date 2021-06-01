@@ -41,6 +41,7 @@ public class CorredorFormulariController {
 		this.GestorVentanas = GestorVentana;
 		this.isRegistre = isRegistre;
 		if (model != null) {
+
 			this.model = model;
 			this.Nom.setText(this.model.getNomcomplet());
 			this.Localitat.setText(this.model.getLocalitat());
@@ -78,17 +79,20 @@ public class CorredorFormulariController {
 		LocalDate ahora = LocalDate.now();
 		LocalDate selected = this.Data.getValue();
 		Period periodo = Period.between(selected, ahora);
+		if (this.model == null) {
+			if (!this.validar(this.Dni.getText())) {
+				this.alert("Error dni", null, "El dni introduit  no existeix");
+			} else if (DaoCorredor.get(this.Dni.getText()) != null) {
+				this.alert("Error dni", null, "Ja existeix un corredor amb aquest dni");
+			}
+		}
 
-		if (!this.validar(this.Dni.getText())) {
-			this.alert("Error dni", null, "El dni introduit  no existeix");
-		} else if (DaoCorredor.get(this.Dni.getText()) != null) {
-			this.alert("Error dni", null, "Ja existeix un corredor amb aquest dni");
-		} else if (periodo.getYears() < 18) {
+		if (periodo.getYears() < 18) {
 			this.alert("Error data de naixement", null, "El corredor te que ser major d'edat");
 		} else if (this.Telefon.getText().length() < 9) {
 			this.alert("Error telefon", null, "El numero de telefon te que tindre minim 9 digits");
 		} else {
-			 this.model = new Corredor_Model(this.Dni.getText(), this.Nom.getText(), this.Data.getValue(),
+			this.model = new Corredor_Model(this.Dni.getText(), this.Nom.getText(), this.Data.getValue(),
 					this.Localitat.getText(), this.Email.getText(), Integer.parseInt(this.Telefon.getText()));
 			String Cname = Club.getValue();
 			if (this.model.getClub() != null)
@@ -122,8 +126,6 @@ public class CorredorFormulariController {
 			}
 		}
 	}
-
-
 
 	public void alert(String title, String header, String content) {
 		Alert alert = new Alert(AlertType.INFORMATION);

@@ -43,10 +43,9 @@ public class ItemInscripcioController {
 	Inscripcio_Model inscripcio;
 
 	// gestor de finestres
-	public void setGestorVentanas(HomeController homeController, Inscripcio_Model inscripcio) {		
+	public void setGestorVentanas(HomeController homeController, Inscripcio_Model inscripcio) {
 		this.GestorVentanas = homeController;
-		
-			
+
 		this.inscripcio = inscripcio;
 		this.load();
 	}
@@ -81,6 +80,7 @@ public class ItemInscripcioController {
 	public void initialize() {
 
 	}
+
 	@FXML
 	public void edit(ActionEvent event) {
 		this.GestorVentanas.modInscripcio(this.inscripcio);
@@ -102,20 +102,21 @@ public class ItemInscripcioController {
 			try {
 				int i = Integer.parseInt(result.get());
 				inscripcio.posicio = i;
-
+				boolean flag = false;
+				List<Inscripcio_Model> llista = inscripcio.getByCarrera("" + inscripcio.getCarrera().getId());
+				for (Inscripcio_Model ins : llista)
+					if (ins.getPosicio() == inscripcio.getPosicio()) {
+						this.alert("Error al posar la posició", null,
+								"Ja existeix a ixa carrera un corredor amb eixa posició");
+						flag = true;
+					}
+				if (!flag)
+					inscripcio.Add(inscripcio);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 		}
-		boolean flag = false;
-		List<Inscripcio_Model> llista = inscripcio.getByCarrera("" + inscripcio.getCarrera().getId());
-		for (Inscripcio_Model ins : llista)
-			if (ins.getPosicio() == inscripcio.getPosicio()) {
-				this.alert("Error al posar la posició", null, "Ja existeix a ixa carrera un corredor amb eixa posició");
-				flag = true;
-			}
-		if (!flag)
-			inscripcio.Add(inscripcio);
+
 		// The Java 8 way to get the response value (with lambda expression).
 
 	}

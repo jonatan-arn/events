@@ -29,10 +29,10 @@ public class Corredor_Model  {
 	public int telefon;
 	
 	@JoinColumn(name = "clubnif")
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private Club_Model club;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "corredor")
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER, mappedBy = "corredor")
 	private List<Inscripcio_Model> Inscripcions = new ArrayList<Inscripcio_Model>();
 	
 	public Corredor_Model() {

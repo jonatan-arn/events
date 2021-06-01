@@ -30,6 +30,7 @@ public class ClubFormulariController {
 		this.GestorVentanas = GestorVentana;
 
 		if (model != null) {
+
 			this.model = model;
 			this.Nom.setText(this.model.getNom());
 			this.Nif.setText(this.model.getNif());
@@ -46,10 +47,12 @@ public class ClubFormulariController {
 
 	@FXML
 	private void Guardar() {
-		if (!this.isNifNie(this.Nif.getText())) {
-			this.alert("Error NIF", null, "Ese nif no existeix");
-		} else if (DaoClub.get(this.Nif.getText()) != null) {
-			this.alert("Error NIF", null, "Ja existeix un club amb aquest nif");
+		if (this.model == null) {
+			if (!this.isNifNie(this.Nif.getText())) {
+				this.alert("Error NIF", null, "Ese nif no existeix");
+			} else if (DaoClub.get(this.Nif.getText()) != null) {
+				this.alert("Error NIF", null, "Ja existeix un club amb aquest nif");
+			}
 		} else {
 			Club_Model model = new Club_Model(this.Nif.getText(), this.Nom.getText(), this.Localitat.getText(),
 					this.President.getText());

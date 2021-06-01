@@ -29,7 +29,7 @@ public class Carrera_Model implements Comparable<Carrera_Model>  {
 	public LocalDate data;
 	public Integer NParticipants;
 	public float distancia,preu;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "carrera")
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER, mappedBy = "carrera")
 	private List<Inscripcio_Model> Inscripcions = new ArrayList<Inscripcio_Model>();
 	public Carrera_Model() {
 		

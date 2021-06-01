@@ -138,13 +138,13 @@ public class Main extends Application {
 
 	public void closeForm(String vista) {
 		if (vista.equals("carrera"))
-			this.HomeController.showCarrera();
+			this.HomeController.loadCarrera();
 		else if (vista.equals("club"))
-			this.HomeController.showClub();
+			this.HomeController.loadClub();
 		else if (vista.equals("corredor"))
-			this.HomeController.showCorredor();
+			this.HomeController.loadCorredor();
 		else if (vista.equals("inscripcio"))
-			this.HomeController.showInscripcio();
+			this.HomeController.loadInscripcio();
 		formulari.hide();
 	}
 	public void closeClubForm()

@@ -22,16 +22,19 @@ public class DaoCarrera {
 		try {
 			if (c != null) {
 				c.setAll(carrera);
-
+				System.out.println(c.getId()+"-"+c.getPreu());
+				
 				sesion.update(c);
+
 			} else {
 				sesion.save(carrera);
-			}
 
+			}
 			sesion.getTransaction().commit();
+
 			return true;
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Error: "+e);
 			return false;
 		}
 	}

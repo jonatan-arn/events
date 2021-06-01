@@ -22,10 +22,15 @@ public class DaoCorredor {
 
 		try {
 			if (c != null) {
-				c.setAll(corredor);;
+				
+				c.setAll(corredor);
 				sesion.update(c);
+				System.out.println(c.getClub());
+				System.out.println("update");
 			} else {
 				sesion.save(corredor);
+				System.out.println("save");
+
 			}
 
 			sesion.getTransaction().commit();
